@@ -16,7 +16,6 @@ on:
       - .github/workflows/lab2-pipeline.yml
 
 jobs:
-
   build_and_deploy_job:
     if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
     runs-on: ubuntu-latest
@@ -40,11 +39,9 @@ jobs:
           output_location: "/Lab2/copy-express-app-testing-demo/dist" # Built app content directory - optional
           ###### End of Repository/Build Configurations ######
       - name: "Test"
-        with: 
-          script: |
+        run: |
               npm run test:azure --watch=false --loglevel verbose
-          displayName: npm run tests
-          result-encoding: string
+              displayName: npm run tests
       
 
   close_pull_request_job:
