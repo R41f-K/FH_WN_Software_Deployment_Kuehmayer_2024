@@ -42,7 +42,7 @@ jobs:
           #app_location: "/Lab2/" # App source code path
           skip_app_build: true
           api_location: "/Lab2/copy-express-app-testing-demo" # Api source code path - optional
-          output_location: "/Lab2/copy-express-app-testing-demo/dist" # Built app content directory - optional
+          output_location: "" # Built app content directory - optional
           ###### End of Repository/Build Configurations ######
       
       
