@@ -4,16 +4,10 @@ on:
   push:
     branches:
       - main
-    paths:
-      - Lab2/copy-express-app-testing-demo/**
-      - .github/workflows/lab2-pipeline.yml
   pull_request:
     types: [opened, synchronize, reopened, closed]
     branches:
       - main
-    paths:
-      - Lab2/copy-express-app-testing-demo/**
-      - .github/workflows/lab2-pipeline.yml
 
 jobs:
   build_and_deploy_job:
