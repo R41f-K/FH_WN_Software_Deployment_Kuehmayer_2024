@@ -21,7 +21,7 @@ jobs:
           lfs: false
           script: |
               npm run test:azure --watch=false --loglevel verbose
-              displayName: npm run tests
+          displayName: npm run tests
           result-encoding: string
       - name: Build And Deploy
         id: builddeploy
