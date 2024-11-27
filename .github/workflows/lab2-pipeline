@@ -19,10 +19,6 @@ jobs:
         with:
           submodules: true
           lfs: false
-          script: |
-              npm run test:azure --watch=false --loglevel verbose
-          displayName: npm run tests
-          result-encoding: string
       - name: Build And Deploy
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
