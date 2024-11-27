@@ -12,6 +12,7 @@
     "build": "webpack",
     "test": "npm run lint && npm run jest",
     "test:e2e": "jest --runInBand e2e_tests/*.test.js",
+    "test:azure": "CI=true npm test npm run test:e2e",
     "jest": "jest --coverage app/__tests__/*.test.js",
     "lint": "eslint app/*.js e2e_tests/*.js",
     "prettier": "prettier --write app/*.js app/__{tests,mocks}__/*.js e2e_tests/*.js"
