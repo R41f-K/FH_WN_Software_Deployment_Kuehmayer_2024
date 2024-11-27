@@ -10,7 +10,7 @@ describe('index route', () => {
 
   test('should respond with a 200 with no query parameters', () => {
     return request(app)
-      .get('/page')
+      .get('/')
       .expect('Content-Type', /html/)
       .expect(200)
       .then(response => {
@@ -22,7 +22,7 @@ describe('index route', () => {
 
   test('should respond with a 200 with valid query parameters', () => {
     return request(app)
-      .get('/page?tags=california&tagmode=all')
+      .get('/?tags=california&tagmode=all')
       .expect('Content-Type', /html/)
       .expect(200)
       .then(response => {
@@ -34,7 +34,7 @@ describe('index route', () => {
 
   test('should respond with a 200 with invalid query parameters', () => {
     return request(app)
-      .get('/page?tags=california123&tagmode=all')
+      .get('/?tags=california123&tagmode=all')
       .expect('Content-Type', /html/)
       .expect(200)
       .then(response => {
@@ -44,7 +44,7 @@ describe('index route', () => {
 
   test('should respond with a 500 error due to bad jsonp data', () => {
     return request(app)
-      .get('/page?tags=error&tagmode=all')
+      .get('/?tags=error&tagmode=all')
       .expect('Content-Type', /json/)
       .expect(500)
       .then(response => {
