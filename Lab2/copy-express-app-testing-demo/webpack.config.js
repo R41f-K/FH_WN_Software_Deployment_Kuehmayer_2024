@@ -4,7 +4,7 @@ module.exports = {
   mode: 'production',
   entry: './app/server.js',
   output: {
-    path: path.join(__dirname, 'dist'),
+    path: './dist',
     publicPath: '/',
     filename: 'final.js',
   },
