@@ -5,6 +5,10 @@ on:
     types: [closed]
     branches:
       - release
+    paths:
+      - Lab2/copy-react-azure-static-web-app/**
+      - .github/workflows/lab2-pipeline.yml
+      - .github/workflows/lab2-release-pipeline.yml
 
 jobs:
   close_pull_request_job:
