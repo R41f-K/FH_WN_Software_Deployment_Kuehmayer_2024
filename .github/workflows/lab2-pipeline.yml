@@ -5,14 +5,14 @@ on:
     branches:
       - main
     paths:
-      - Lab2/copy-express-app-testing-demo/**
+      - Lab2/cop-react-azure-static-web-app/**
       - .github/workflows/lab2-pipeline.yml
   pull_request:
     types: [opened, synchronize, reopened, closed]
     branches:
       - main
     paths:
-      - Lab2/copy-express-app-testing-demo/**
+      - Lab2/cop-react-azure-static-web-app/**
       - .github/workflows/lab2-pipeline.yml
 
 jobs:
