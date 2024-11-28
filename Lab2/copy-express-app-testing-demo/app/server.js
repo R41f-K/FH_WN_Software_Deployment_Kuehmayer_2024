@@ -1,4 +1,3 @@
-const express = require('express');
 const favicon = require('serve-favicon');
 const path = require('path');
 
@@ -18,8 +17,8 @@ app.set('view engine', 'html');
 require('./route')(app);
 
 // server
-const port = process.env.PORT || 3000;
-app.server = app.listen(port);
-console.log(`listening on port ${port}`);
+// const port = process.env.PORT || 3000;
+// app.server = app.listen(port);
+// console.log(`listening on port ${port}`);
 
 module.exports = app;
