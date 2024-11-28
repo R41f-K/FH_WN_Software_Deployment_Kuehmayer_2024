@@ -3,10 +3,10 @@ const path = require('path');
 
 const app = require('@azure/functions');
 
-// public assets
-app.use(express.static(path.join(__dirname, 'public')));
-app.use(favicon(path.join(__dirname, 'public/images', 'favicon.ico')));
-app.use('/coverage', express.static(path.join(__dirname, '..', 'coverage')));
+// // public assets
+// app.use(express.static(path.join(__dirname, 'public')));
+// app.use(favicon(path.join(__dirname, 'public/images', 'favicon.ico')));
+// app.use('/coverage', express.static(path.join(__dirname, '..', 'coverage')));
 
 // ejs for view templates
 app.engine('.html', require('ejs').__express);
