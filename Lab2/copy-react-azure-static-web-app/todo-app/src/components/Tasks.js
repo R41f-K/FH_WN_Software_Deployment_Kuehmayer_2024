@@ -8,7 +8,7 @@ export const Tasks = ({tasks, deleteTask, taskEdited}) => {
 
     const history = useHistory();
 
-    //console.log('tasks length:::', tasks)
+    console.log('tasks length:::', tasks)
     if (tasks.length === 0) return null
 
     
