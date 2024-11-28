@@ -2,7 +2,7 @@ const express = require('express');
 const favicon = require('serve-favicon');
 const path = require('path');
 
-const app = express();
+const app = require('@azure/funczions');;
 
 // public assets
 app.use(express.static(path.join(__dirname, 'public')));
