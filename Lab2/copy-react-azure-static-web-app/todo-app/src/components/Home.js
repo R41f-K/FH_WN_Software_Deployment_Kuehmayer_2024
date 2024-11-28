@@ -15,7 +15,7 @@ function Home() {
 
   useEffect(() => {
     getAllTasks().then(tasks => {
-        console.log(tasks)
+        //console.log(tasks)
         setTasks(tasks)
       });
   }, [numberOfTasks, isTaskEdited])
@@ -32,7 +32,7 @@ function Home() {
 
   function delTask(taskId) {
       deleteTask(taskId).then(response => {
-        console.log(response)
+        //console.log(response)
         setNumberOfTasks(numberOfTasks - 1)
       });
   }
