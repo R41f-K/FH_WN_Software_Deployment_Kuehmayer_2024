@@ -66,7 +66,6 @@ jobs:
           client-id: ${{ secrets.__clientidsecretname__ }}
           tenant-id: ${{ secrets.__tenantidsecretname__ }}
           subscription-id: ${{ secrets.__subscriptionidsecretname__ }}
-          auth-type: SERVICE_PRINCIPAL
 
       - name: 'Deploy to Azure Web App'
         id: deploy-to-webapp
