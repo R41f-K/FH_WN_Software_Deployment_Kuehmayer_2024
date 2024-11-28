@@ -7,7 +7,7 @@ on:
   pull_request:
     types: [closed]
     branches:
-      - release
+      - release-web-app
     paths:
       - Lab2/copy-express-app-testing-demo/**
       - .github/workflows/lab2-web-app-pipeline.yml
