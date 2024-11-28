@@ -31,7 +31,7 @@ jobs:
       - name: Use Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20.x'
+          node-version: '16.13.1'
 
       - name: Install Dependencies Backend
         run: cd Lab2/copy-react-azure-static-web-app/api && npm ci
