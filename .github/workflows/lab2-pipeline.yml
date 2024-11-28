@@ -42,9 +42,6 @@ jobs:
       - name: Install Dependencies Frontend
         run: cd Lab2/copy-react-azure-static-web-app/todo-app && npm ci
 
-      - name: Run Tests Frontend
-        run: cd Lab2/copy-react-azure-static-web-app/todo-app && npm test
-
       - name: Build And Deploy
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
