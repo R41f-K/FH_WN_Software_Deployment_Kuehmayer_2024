@@ -1,16 +1,14 @@
-name: Azure Static Web Apps CI/CD
+name: Release Pipeline
 
 on:
-  push:
-    branches:
-      - release/v*
   pull_request:
-    types: [opened, synchronize, reopened, closed]
+    types: [closed]
     branches:
-      - release/v*
+      - release
 
 jobs:
   close_pull_request_job:
+    if: github.event_name == 'pull_request' && github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     name: Close Pull Request Job
     steps:
