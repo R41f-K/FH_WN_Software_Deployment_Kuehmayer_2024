@@ -33,11 +33,17 @@ jobs:
         with:
           node-version: '18.x'
 
-      - name: Install Dependencies 
+      - name: Install Dependencies Backend
         run: cd Lab2/copy-react-azure-static-web-app/api && npm ci
 
-      - name: Run Tests
+      - name: Run Tests Backend
         run: cd Lab2/copy-react-azure-static-web-app/api && npm test
+
+      - name: Install Dependencies Frontend
+        run: cd Lab2/copy-react-azure-static-web-app/todo-app && npm ci
+
+      - name: Run Tests Frontend
+        run: cd Lab2/copy-react-azure-static-web-app/todo-app && npm test
 
       - name: Build And Deploy
         id: builddeploy
