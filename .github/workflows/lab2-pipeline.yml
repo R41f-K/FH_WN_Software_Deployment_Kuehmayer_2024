@@ -7,6 +7,7 @@ on:
     paths:
       - Lab2/copy-react-azure-static-web-app/**
       - .github/workflows/lab2-pipeline.yml
+      - .github/workflows/lab2-release-pipeline.yml
   pull_request:
     types: [opened, synchronize, reopened, closed]
     branches:
@@ -14,6 +15,7 @@ on:
     paths:
       - Lab2/copy-react-azure-static-web-app/**
       - .github/workflows/lab2-pipeline.yml
+      - .github/workflows/lab2-release-pipeline.yml
 
 jobs:
   build_and_deploy_job:
