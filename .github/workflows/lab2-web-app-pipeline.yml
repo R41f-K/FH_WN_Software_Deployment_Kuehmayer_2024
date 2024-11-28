@@ -7,7 +7,18 @@ on:
   push:
     branches:
       - main
-  workflow_dispatch:
+    paths:
+      - Lab2/copy-express-app-testing-demo/**
+      - .github/workflows/lab2-web-app-pipeline.yml
+      - .github/workflows/lab2-web-app-release-pipeline.yml
+  pull_request:
+    types: [opened, synchronize, reopened, closed]
+    branches:
+      - main
+    paths:
+      - Lab2/copy-express-app-testing-demo/**
+      - .github/workflows/lab2-web-app-pipeline.yml
+      - .github/workflows/lab2-web-app-release-pipeline.yml
 
 jobs:
   build:
