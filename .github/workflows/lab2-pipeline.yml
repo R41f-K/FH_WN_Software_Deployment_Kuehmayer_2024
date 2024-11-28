@@ -5,15 +5,17 @@ on:
     branches:
       - main
     paths:
-      - Lab2/copy-express-app-testing-demo/**
+      - Lab2/copy-react-azure-static-web-app/**
       - .github/workflows/lab2-pipeline.yml
+      - .github/workflows/lab2-release-pipeline.yml
   pull_request:
     types: [opened, synchronize, reopened, closed]
     branches:
       - main
     paths:
-      - Lab2/copy-express-app-testing-demo/**
+      - Lab2/copy-react-azure-static-web-app/**
       - .github/workflows/lab2-pipeline.yml
+      - .github/workflows/lab2-release-pipeline.yml
 
 jobs:
   build_and_deploy_job:
@@ -31,16 +33,16 @@ jobs:
       - name: Use Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20.x'
+          node-version: '16.13.1'
 
-      - name: Install Dependencies
-        run: cd Lab2/copy-express-app-testing-demo && npm install
+      - name: Install Dependencies Backend
+        run: cd Lab2/copy-react-azure-static-web-app/api && npm ci
 
-      - name: Run Tests
-        run: cd Lab2/copy-express-app-testing-demo && npm test
+      - name: Run Tests Backend
+        run: cd Lab2/copy-react-azure-static-web-app/api && npm test
 
-      - name: Run End to End Tests
-        run: cd Lab2/copy-express-app-testing-demo && npm run test:e2e
+      - name: Install Dependencies Frontend
+        run: cd Lab2/copy-react-azure-static-web-app/todo-app && npm ci
 
       - name: Build And Deploy
         id: builddeploy
@@ -51,10 +53,9 @@ jobs:
           action: "upload"
           ###### Repository/Build Configurations - These values can be configured to match your app requirements. ######
           # For more information regarding Static Web App workflow configurations, please visit: https://aka.ms/swaworkflowconfig
-          app_location: "/Lab2/copy-express-app-testing-demo/frontend" # App source code path
-          api_location: "/Lab2/copy-express-app-testing-demo/app" # Api source code path - optional
-          # output_location: "/Lab2/copy-express-app-testing-demo/dist" # Built app content directory - optional
-          skip_app_build: true
+          app_location: "/Lab2/copy-react-azure-static-web-app/todo-app" # App source code path
+          api_location: "/Lab2/copy-react-azure-static-web-app/api/" # Api source code path - optional
+          #output_location: "/Lab2/copy-react-azure-static-web-app/todo-app/build/static" # Built app content directory - optional
           ###### End of Repository/Build Configurations ######
       
       
