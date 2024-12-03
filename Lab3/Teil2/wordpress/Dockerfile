@@ -42,7 +42,7 @@ RUN chmod -R g+w /var/www/wordpress/wp-content/plugins
 RUN mkdir -p /var/www/wordpress/wordpress/wp-content/uploads 
 RUN chown -R www-data:www-data /var/www/wordpress/wordpress/wp-content/uploads 
 
-#COPY ./wp-config-sample.php /var/www/wordpress/wp-config.php
+COPY ./wp-config-sample.php /var/www/wordpress/wp-config.php
 
 VOLUME /var/www/wordpress
 EXPOSE 80/tcp
