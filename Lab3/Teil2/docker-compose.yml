@@ -12,15 +12,16 @@ services:
       - wordpress:/var/www/wordpress
 
   db:
-    build: ./mysql
-    environment:
-      MYSQL_DATABASE: ${WORDPRESS_DB_NAME:-exampledb}
-      MYSQL_USER: ${WORDPRESS_DB_USER:-exampleuser}
-      MYSQL_PASSWORD: ${WORDPRESS_DB_PASSWORD:-examplepass}
-      MYSQL_RANDOM_ROOT_PASSWORD: ${SQL_ROOT_PASSWORD:-'admin'}
+    build:
+      context: ./mysql/
+      args:
+        - MYSQL_DATABASE=${WORDPRESS_DB_NAME:-exampledb}
+        - MYSQL_USER=${WORDPRESS_DB_USER:-exampleuser}
+        - MYSQL_PASSWORD=${WORDPRESS_DB_PASSWORD:-examplepass}
+        - MYSQL_RANDOM_ROOT_PASSWORD=${SQL_ROOT_PASSWORD:-admin}
     volumes:
-      - mysql:/var/lib/mysql
-  
+    - mysql:/var/lib/mysql
+
 volumes:
   mysql:
   wordpress:
